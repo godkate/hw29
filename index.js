@@ -11,23 +11,15 @@ function renderAnswers () {
         <span>${counter}</span>
         `;
         answers.append(answer);
+
+    })
+    answers.addEventListener('click', ({target}) => {
+        if (target.matches('p')) {
+            let count = target.nextElementSibling;
+            count.innerHTML++;
+            console.log(target.nextElementSibling)
+        }
     })
 }
 
 renderAnswers();
-
-answers.addEventListener('click', ({ target }) => {
-    if (target.matches('p')) {
-        const { id } = target.dataset;
-        counter(id);
-    }
-})
-
-function counter (id) {
-    smiles.map((smile) => {
-        if (smile.id === id) {
-            return smile.id += 1;
-        }
-        return smile;
-    })
-}
