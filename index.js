@@ -17,7 +17,6 @@ function renderAnswers () {
         if (target.matches('p')) {
             let count = target.nextElementSibling;
             count.innerHTML++;
-            console.log(target.nextElementSibling)
         }
     })
 }
